@@ -1,8 +1,12 @@
-.answers{
-    background-color: green;
+
+*{
+    background-color: #e800ee;
+}
+.title{
+    font-size: 54px;
+    color: #eaee00;
 
 }
-
 ol{
     list-style-type:lower-latin;
 }
