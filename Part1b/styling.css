@@ -1,4 +1,12 @@
 .answers{
-background-color: green;
+    background-color: green;
 
+}
+
+ol{
+    list-style-type:lower-latin;
+}
+
+.italic{
+    font-style: italic;
 }
