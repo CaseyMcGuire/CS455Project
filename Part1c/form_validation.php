@@ -1,5 +1,6 @@
 <?php
 print_r ($_POST);
+echo "<br />";
 //First, make sure the user didn't enter empty fields
 $invalid_first_name = ($_POST["firstname"] == "");
 $invalid_last_name = ($_POST["lastname"] == "");
@@ -13,7 +14,15 @@ if($invalid_first_name || $invalid_last_name || $invalid_ssn){
 
 try{
   
+  $db = new PDO('sqlite:../../database/airport.sqlite3');
   
-}
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $db->exec("insert into passengers values ('" . $_POST['firstname'] . "', NULL,'" . $_POST['lastname']. "','" . $_POST['ssn'] . "')");
 
+  $db = NULL;
+  echo "SUCCESS";
+}
+catch(PDOException $e){
+  print 'Exception: ' . $e->getMessage();
+}
 ?>
