@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <?php
   
-  <form action="up.php" method="post">
-    
-    <input type="text" name="ssn" value="<?php echo $_GET['ssn'] ?>"/>
-    <input type="submit"/>
-  </form>
-
+  echo "<form action=\"update2.php\" method=\"post\">";
+  echo "<input type=\"text\" name=\"ssn\" value=\"".$_GET['ssn']"\"\\>";
+  echo "<input type=\"submit\"\\>";
+  ?>
 </body>
 </html>
