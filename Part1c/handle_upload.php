@@ -17,7 +17,7 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_to_upload)) {
   
   echo "$file has been uploaded.\n";
   
-  $file_size = human_filesize("uploads/$file", 2);
+  $file_size = human_filesize("uploads/$file");
   echo "$file is $file_size in size.";
   
 } else {
