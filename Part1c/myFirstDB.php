@@ -33,8 +33,8 @@ try
                   <a href=\"update.php?ssn=" . $tuple['ssn'] . 
                   "&name=" . $tuple['l_name'] .
                   "&seat=" . $tuple['seat'] .
-                  "&departure=" . $tuple['departure'] .
-                  "&arrival=" . $tuple['arrival'] .
+                  "&dep_loc=" . $tuple['dep_loc'] .
+                  "&arr_loc=" . $tuple['arr_loc'] .
                   "\">Update</a></td>
                   ";
                   
