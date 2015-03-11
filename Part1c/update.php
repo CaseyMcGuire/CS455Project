@@ -18,7 +18,7 @@
   
   $error = false;
   
-  if(empty($_POST[$required])) {
+  if(isset($_POST[$required])) {
     $error = true;
   }
   
