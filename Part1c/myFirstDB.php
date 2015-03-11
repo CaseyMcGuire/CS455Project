@@ -30,7 +30,8 @@ try
                 echo "</tr>";
         }
         echo "</table>";
-        echo "<a href=\"update.php\"</a>";
+        
+        echo "<a href=\"update.php\">Update</a>";
 
         $db = NULL;
 
