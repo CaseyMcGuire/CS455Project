@@ -31,7 +31,7 @@ try
                 echo "
                   <td>
                   <a href=\"update.php?ssn=" . $tuple['ssn'] . 
-                  "&name=" . $tuple['name'] .
+                  "&name=" . $tuple['l_name'] .
                   "&seat=" . $tuple['seat'] .
                   "&departure=" . $tuple['departure'] .
                   "&arrival=" . $tuple['arrival'] .
