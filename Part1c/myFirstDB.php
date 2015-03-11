@@ -30,7 +30,7 @@ try
                 
                 echo "
                   <td>
-                  <a href=\"update.php?ssn=" . $tuple['ssn'] . 
+                  <a href=\"update_form.php?ssn=" . $tuple['ssn'] . 
                   "&l_name=" . $tuple['l_name'] .
                   "&seat=" . $tuple['seat'] .
                   "&dep_loc=" . $tuple['dep_loc'] .
