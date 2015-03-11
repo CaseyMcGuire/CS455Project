@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<?php
   
-try {
-  
-  $db = new PDO('sqlite:../../database/airport.sqlite3');
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
-  
-  
-}
-catch(PDOException $e) {
-  print $e->getMessage();
-}
-  
-?>
+  <form action="update.php" method="post">
+    
+    <input type="text" name="ssn"><?php echo $_GET['SSN']?></input>
+    <input type="submit"/>
+  </form>
 
 </body>
 </html>
