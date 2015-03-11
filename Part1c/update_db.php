@@ -4,9 +4,8 @@ try {
   $db = new PDO('sqlite:../../database/airport.sqlite3');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
-  
-  
-  echo "hi";
+  $new_ssn = $_GET['ssn'];
+  echo "$new_ssn";
   
 }
 catch(PDOException $e) {
