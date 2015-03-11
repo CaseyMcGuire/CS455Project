@@ -27,7 +27,7 @@ try
                 echo "<td>".$tuple['dep_loc']." ".$tuple['dep_time']."</td>";
                 echo "<td>".$tuple['arr_loc']." ".$tuple['arr_time']."</td>";
                 echo "<td><a href=\"delete.php?ssn=".$tuple['ssn']."&flight_no=".$tuple['flight_no']."\">Delete</a></td>";
-                echo "<a href=\"update.php?ssn=".$tuple['ssn']."&flight_no=".$tuple['flight_no']."\">Update</a>";
+                echo "<td><a href=\"update.php?ssn=".$tuple['ssn']."&flight_no=".$tuple['flight_no']."\">Update</a></td>";
                 echo "</tr>";
         }
         echo "</table>";
