@@ -14,7 +14,7 @@
   
   <?php
   if (!isset($_GET["uploaded"])) {
-    echo "Please select a file to upload."
+    echo "Please select a file to upload.";
   }
   ?>
   
