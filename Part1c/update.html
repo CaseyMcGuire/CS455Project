@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Upload a File</title>
-</head>
-
 <body>
-  
-  <form action="handle_upload.php" method="post" enctype="multipart/form-data">
-    <label for="filename">Upload file:</label>
-    <input type="file" name="filename"/>
-    <input type="submit"/>
-  </form>
-  
-  <?php
-  $required = 'filename';
-  
-  $error = false;
-  
-  if(isset($_POST[$required])) {
-    $error = true;
-  }
-  
-  if($error) {
-    echo "You must choose a file to upload.";
-  }
-  ?>
-  
-</body>
 
+<?php
+  
+try {
+  
+  $db = new PDO('sqlite:../../database/airport.sqlite3');
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  
+  
+}
+catch(PDOException $e) {
+  print $e->getMessage();
+}
+  
+?>
+
+</body>
 </html>
