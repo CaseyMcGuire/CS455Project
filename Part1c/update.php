@@ -8,13 +8,21 @@
 <body>
   
   <form action="handle_upload.php" method="post">
-    <label for="uploaded">Upload file:</label>
-    <input type="file" name="uploaded"/>
+    <label for="filename">Upload file:</label>
+    <input type="file" name="filename"/>
   </form>
   
   <?php
-  if (!isset($_GET["uploaded"])) {
-    echo "Please select a file to upload.";
+  $required = 'filename';
+  
+  $error = false;
+  
+  if(empty($_POST[$required])) {
+    $error = true;
+  }
+  
+  if($error) {
+    echo "You must choose a file to upload.";
   }
   ?>
   
