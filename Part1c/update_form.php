@@ -31,7 +31,7 @@
   // echo "<br />";
   
   foreach($_GET as $query_string => $variable) {
-    echo "<label class=\"heading\" for=\"$query_string\"> Arrival Location: </label>";
+    echo "<label class=\"heading\" for=\"$query_string\"> $query_string: </label>";
     echo "<input type=\"text\" name=\"$query_string\" value=\"".$variable."\"\>";
     echo "<br />";
     echo "<br />";
