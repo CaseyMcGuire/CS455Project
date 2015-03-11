@@ -2,7 +2,8 @@
 try {
   $db = new PDO('sqlite:../../database/airport.sqlite3');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $db->exec("delete from passengers NATURAL JOIN flight NATURAL JOIN onboard where ssn=".$_GET['ssn']."AND flight_no=".$_GET['flight_no']);
+
+  $db->exec("delete from passengers NATURAL JOIN flight NATURAL JOIN onboard where ssn=\"".$_GET['ssn']."\"AND flight_no=\"".$_GET['flight_no']."\"");
   
   echo '<table border="1">';
   echo '<tr><td>SSN</td><td>Name</td><td>Seat</td><td>Departure</td><td>Arrival</td></tr>';
