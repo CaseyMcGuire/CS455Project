@@ -4,7 +4,7 @@
 <?php
 try
 {
-        $db = new PDO('sqlite:database/airport.sqlite3');
+        $db = new PDO('sqlite:../../database/airport.sqlite3');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //These need to be commented out. Otherwise, we get a constraint error.
