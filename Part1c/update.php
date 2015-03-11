@@ -9,7 +9,7 @@
   
   <form action="handle_upload.php" method="post">
     <label for="filename">Upload file:</label>
-    <input type="file" name="filename"/>
+    <input type="file" name="filename"/><input type="sumbit"/>
   </form>
   
   <?php
