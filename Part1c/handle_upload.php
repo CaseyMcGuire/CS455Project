@@ -9,7 +9,7 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_to_upload)) {
   echo "$file has been uploaded.";
   
   $file_size = filesize("uploads/$file");
-  echo "$file is $filesize large";
+  echo "$file is $file_size in size.";
   
 } else {
   echo "Please try again.";
