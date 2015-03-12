@@ -2,7 +2,8 @@
 <html>
 <body>
   <?php
-  echo "$_GET['ssn']";
+  $test = $_GET['ssn'];
+  echo "$test";
   echo "<form action=\"update_db.php\" method=\"post\">";
   
   foreach($_GET as $query_string => $variable) {
