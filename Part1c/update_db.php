@@ -5,6 +5,11 @@ try {
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
   $new_ssn = $_POST['ssn'];
+  $old_ssn = $_POST['old_ssn'];
+  
+  print "$old_ssn";
+  print "$new_ssn";
+  
   $new_l_name = $_POST['l_name'];
   $new_seat = $_POST['seat'];
   $new_dep_loc = $_POST['dep_loc'];    
