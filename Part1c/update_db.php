@@ -24,7 +24,7 @@ try {
   // $new_arr_loc = $_POST['arr_loc'];
   // $db->exec("update flight set arr_loc=$new_arr_loc where arr_loc=$old_arr_loc");
   
-  $db = NULL;
+  // $db = NULL;
   
   header("Location: myFirstDB.php");
   
