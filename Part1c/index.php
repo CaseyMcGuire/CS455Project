@@ -15,13 +15,14 @@ try
         //      $db->exec("insert into onboard values ('999-99-9999', 4, '32C');");
 
         echo '<table border="1">';
-        echo '<tr><td>SSN</td><td>Name</td><td>Seat</td><td>Departure</td><td>Arrival</td></tr>';
+        echo '<tr><td>SSN</td><td>Flight No.</td><td>Name</td><td>Seat</td><td>Departure</td><td>Arrival</td></tr>';
 
         $result = $db->query('SELECT * FROM passengers NATURAL JOIN onboard NATURAL JOIN flight');
 
         foreach($result as $tuple)
         {
                 echo "<tr><td>".$tuple['ssn']."</td>";
+		echo "<td>" . $tuple['flight_no'] . "</td>";
                 echo "<td>".$tuple['f_name']." ".$tuple['l_name']."</td>";
                 echo "<td>".$tuple['seat']."</td>";
                 echo "<td>".$tuple['dep_loc']." ".$tuple['dep_time']."</td>";

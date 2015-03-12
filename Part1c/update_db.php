@@ -11,14 +11,17 @@ try {
   $new_seat = $_POST['seat'];
   $new_dep_loc = $_POST['dep_loc'];
   $new_arr_loc = $_POST['arr_loc'];
-  $flight_no = $_POST['flight_no'];
-    
+  $new_flight_no = $_POST['flight_no'];
+  $old_flight_no = $_POST['old_flight_no'];
+  print_r($_POST);
   $db->exec("update passengers set f_name='$new_f_name', l_name='$new_l_name' where ssn='$ssn'");
-  $db->exec("update onboard set seat='$new_seat' where ssn='$ssn' and flight_no=$flight_no");
-  $db->exec("update flight set dep_loc='$new_dep_loc', arr_loc='$new_arr_loc' where flight_no='$flight_no'");
+  $db->exec("update flight set dep_loc='$new_dep_loc', arr_loc='$new_arr_loc' where flight_no='$old_flight_no'");
+  $db->exec("update onboard set flight_no=$new_flight_no, seat='$new_seat' where flight_no=$old_flight_no and ssn='$ssn'");
+  $db->exec("update onboard set seat='$new_seat' where ssn='$ssn' and flight_no=$old_flight_no");
+    //    $db->exec("update onboard set flight_no=$new_flight_no where flight_no=$old_flight_no");
   $db = NULL;
   
-  header("Location: myFirstDB.php");
+  header("Location: index.php");
   exit;
   
 }
