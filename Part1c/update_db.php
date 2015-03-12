@@ -8,7 +8,7 @@ try {
 
   $old_ssn = $_POST['old_ssn'];  
   $new_ssn = $_POST['ssn'];
-  $db->exec("update passengers set table.ssn=$new_ssn where table.ssn=$old_ssn");
+  $db->exec("update passengers set $table.ssn=$new_ssn where $table.ssn=$old_ssn");
 
   // $old_l_name = $_POST['old_l_name'];
   // $new_l_name = $_POST['l_name'];
