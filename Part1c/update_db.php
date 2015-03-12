@@ -19,12 +19,13 @@ try {
   $db->exec("update passengers set f_name='$new_f_name', l_name='$new_l_name' where ssn='$ssn'");
 
     //update the flight's departure and arrival locations
-  $db->exec("update flight set dep_loc='$new_dep_loc', arr_loc='$new_arr_loc' where flight_no='$old_flight_no'");
+//  $db->exec("update flight set dep_loc='$new_dep_loc', arr_loc='$new_arr_loc' where flight_no='$old_flight_no'");
+    $db->exec("update flight set dep_loc='$new_dep_loc', arr_loc='$new_arr_loc', flight_no=$new_flight_no where flight_no=$old_flight_no");
+    $db->exec("update onboard set flight_no=$new_flight_no where flight_no=$old_flight_no");
     //$db->exec("update onboard set flight_no=$new_flight_no, seat='$new_seat' where flight_no=$old_flight_no and ssn='$ssn'");
 
-    $db->exec("update onboard set seat='$new_seat' where ssn='$ssn' and flight_no=$old_flight_no");
-    $db->exec("update flight set flight_no=$new_flight_no where flight_no=$old_flight_no");
-    $db = NULL;
+    $db->exec("update onboard set seat='$new_seat' where ssn='$ssn' and flight_no=$new_flight_no");
+     $db = NULL;
     
     
     header("Location: index.php");
