@@ -4,10 +4,13 @@ try {
   $db = new PDO('sqlite:../../database/airport.sqlite3');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $old_ssn = $_POST['old_ssn'];  
-  $new_ssn = $_POST['ssn'];
-  $db->exec("update passengers set ssn=$new_ssn where ssn=$old_ssn");
+  
+  $ssn = $_POST['old_ssn'];
+  $new_l_name = $_POST['l_name'];
+  $new_f_name = $_POST['f_name'];
 
+  $db->exec("update passengers set f_name='$new_f_name' where ssn='$ssn'");
+  
   // $old_l_name = $_POST['old_l_name'];
   // $new_l_name = $_POST['l_name'];
   // $db->exec("update passengers set l_name=$new_l_name where l_name=$old_l_name");
@@ -24,10 +27,10 @@ try {
   // $new_arr_loc = $_POST['arr_loc'];
   // $db->exec("update flight set arr_loc=$new_arr_loc where arr_loc=$old_arr_loc");
   
-  // $db = NULL;
+  $db = NULL;
   
-  header("Location: myFirstDB.php");
-  
+  //   header("Location: myFirstDB.php");
+  //   exit;
   
 }
 catch(PDOException $e) {
