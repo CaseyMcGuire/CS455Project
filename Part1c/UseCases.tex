@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Project1c}
+\author{Casey McGuire and Joshua Nance}
+\date{March 13, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Use Cases}
+\begin{enumerate}
+    \item  \textbf{Case 1: }As a user I want to be able to log in to the website using my unique credentials so that I can have persistent data associated with my profile.
+    \newline \textbf{Description: }To differentiate a user from someone who simply comes across a blog post, reads it once, and then never visits the blogging platform again, we would like to implement a feature that allows those visitors who want to become consistent members of the community to have their own profiles.  Once they have a profile, they would be able to post their own blogs, and network with the other authors of the platform.
+    \newline \textbf{Actors: }User
+    \newline \textbf{Preconditions: }The visitor has decided they wish to be made an official member of the community, and they have a valid email address and a password they would like to use to log in to their new account.
+    \newline \textbf{Flow of events: }
+    \begin{enumerate}
+        \item The user navigates to the home page of the blogging platform.
+        \item The user clicks on an option to register an account with the platform.
+        \item The user will be taken to a new page, on which he or she can input whichever credentials they would like to use to log in.
+        \item They will be redirected to a page that confirms they now have an account.
+    \end{enumerate}
+    \newline \textbf{Alternate Flow of Events: }
+    \begin{enumerate}
+        \item The user already has a profile, and so may use the "Log-In" option instead of the "Register" option.
+        \item The user may navigate to the "Register" page, where he or she will be prompted to input his or her new credentials.  If, however, the potential user decides to not finish making the new account, there will be an option to take that individual back to the home page.
+    \end{enumerate}
+    \newline \textbf{Post-conditions: }The individual now has a new account, and can log in to the platform using the credentials he or she provided during registration.
+    \item  \textbf{Case 2: }As a logged-in user I want to be able to see my own blog posts, and have the ability to create, edit, and/or delete them, so that I can control my own content. \newline
+    \textbf{Description: }One of the purposes for registering an account with the platform is to have the ability to manage any content you generate using the platform.  This content might include posts or comments you have written.  Your posts should be easily accessible to you through your own personalized dashboard, for you to have the ability to edit or delete them from your personal blog. \newline
+    \textbf{Actors: }User \newline
+    \textbf{Preconditions: }The user has successfully logged in to his or her account.  In order to edit a blog post, there of course must be some blog post that has already been created, which can then be edited. \newline
+    \textbf{Flow of Events: }
+    \begin{enumerate}
+        \item The user logs into his or her account.
+        \item The user will be directed automatically to his or her dashboard.
+        \item The user will see links associated with the creation, editing, or deletion of blog posts.
+        \item The user will click on the link that suits their intended purpose.  If a user wishes to create a post, the user will click the corresponding link and be taken to a text editor; if the user's intention is to edit an existing post, their will be an "Edit" link next to the title of all previously posted articles; finally, if the user wishes to delete an existing post, there will be a "Delete" link next to every "Edit" link.
+    \end{enumerate} \newline
+    \textbf{Alternate Flow of Events: }
+    \begin{enumerate}
+        \item The user is logged in and can see his or her dashboard, but does not choose to create or edit any posts.
+    \end{enumerate} \newline
+    \textbf{Post-conditions: } The user has successfully created a new post, edited an existing one, or deleted an existing one, or any combination thereof.
+    \item  \textbf{Case 3: }As the creator and owner of my own blog posts I want to be able to view and filter comments from other users, so that I can police my blog. \newline
+    \textbf{Description: }Almost any blogger or content-hosting individual that allows users to comment on the content created by him or her will invariably receive some spam comments or just hateful and/or inappropriate remarks from certain other users.  If a comment is posted that does not positively or constructively contribute to the conversation, the author of the post that is being commented on should have the ability to remove such unnecessary comments from their comments section. \newline
+    \textbf{Actors: }User (multiple) \newline
+    \textbf{Preconditions: }The user must have created a blog post on which other users have provided comments. \newline
+    \textbf{Flow of Events: }
+    \begin{enumerate}
+        \item The content creator has posted an article.
+        \item Other users have commented on the article.
+        \item The content creator determines that one of the comments is inappropriate and should be removed.
+        \item The content creator removes that comment from the article.
+    \end{enumerate}
+    \textbf{Alternate Flow of Events: }
+    \begin{enumerate}
+        \item The content creator has posted an article.
+        \item Other users have commented on the article.
+        \item The content creator determines that all comments are pertinent or constructive in some way, and will not be removing any of them.
+    \end{enumerate}
+    \textbf{Post-conditions: }The content creator has successfully removed the inappropriate comments.
+    \item  \textbf{Case 4: }As a user I want to be able to comment on other blog posts from other users, so that I can actively participate as a member of this blogging community. \newline
+\textbf{Description: }Another way to contribute to the community besides writing your own blog posts is to comment on other users' blog posts.  Every user--i.e. everyone who has an account and can sign into the platform--should be able to visit the blogs of other users and comment on any article they have written. \newline
+\textbf{Actors: }User \newline
+\textbf{Preconditions: } The user must be logged into his or her account.  The user must have navigated to an article that another user posted. \newline
+\textbf{Flow of Events: }
+\begin{enumerate}
+    \item The user navigates to an article written by another user.
+    \item The user scrolls down to the bottom of the article.
+    \item The user clicks on "Add a Comment."
+    \item The user types his or her comment and submits it.
+\end{enumerate}
+\textbf{Alternate Flow of Events: }
+\begin{enumerate}
+    \item The user navigates to an article written by another user.
+    \item The user may read the article.
+    \item The user decides not to comment on the article.
+\end{enumerate}
+\textbf{Post-conditions: } The user's comment is submitted and stored in the database.  The next time that user or another visitor reads that article, the user's comment will be included in the comment section.
+
+    \item  \textbf{Case 5: }As a user I would like to be able to save/bookmark my favorite blog posts from other authors, so that I can come back to them later. \newline
+    \textbf{Description: }In visiting other users' blogs and reading many different articles hosted on the platform, the user might come across articles that the user would like to come back to at a later date, maybe to re-read or to show other people.  It would be very convenient if that user had the ability to "save" articles for later viewing.  This feature would allow the user to do just that, and to have a spot on his or her dashboard dedicated to "saved" articles. \newline
+    \textbf{Actors: }User \newline
+    \textbf{Preconditions: }The user must be logged into his or her account. \newline
+    \textbf{Flow of Events: }
+    \begin{enumerate}
+        \item The user navigates to an article written by another user.
+        \item The user reads the article.
+        \item The user reaches the bottom of the article and clicks the "Save this Article" link.
+        \item The article can now be found under that user's "saved" section.
+    \end{enumerate}
+    \textbf{Alternate Flow of Events: }
+    \begin{enumerate}
+        \item The user navigates to an article written by another user.
+        \item The user reads the article.
+        \item The user reads it once and chooses not to save it.
+    \end{enumerate}}
+    \textbf{Post-conditions: }The user's saved section will now include the new article.
+\end{enumerate}
+
+\end{document}
