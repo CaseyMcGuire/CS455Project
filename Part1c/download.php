@@ -1,6 +1,6 @@
 <?php
 $name = basename($_GET['file']);
-$file = "uploads/$file";
+$file = "uploads/$name";
 
 if(!$file) {
   die("File not found.");
