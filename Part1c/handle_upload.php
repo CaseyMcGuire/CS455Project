@@ -13,9 +13,12 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_to_upload)) {
   echo "Download your file: ";
   
   if ($source = opendir($upload_directory)) {
-    $to_download = readdir($source);
-    print $to_download;
-    echo "<a href='download.php?file=".$to_download."'>Download</a>";
+    while (false !== ($to_download = readdir($source))) {
+      if ($to_download != "." && $to_download != "..") {
+        echo "<a href='download.php?file=".$to_download."'>Download</a>";        
+      }
+    }
+    closedir($source);
   }
   
 } else {
