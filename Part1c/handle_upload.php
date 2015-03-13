@@ -9,11 +9,11 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_to_upload)) {
   echo "$file has been uploaded.\n";
   
   $file_size = filesize("uploads/$file");
-  echo "$file is $file_size in size.";
+  echo "$file is $file_size bytes in size.";
   echo "Download your file: ";
   
-  if ($upload_directory) {
-    $to_download = readdir($upload_directory);
+  if ($source = opendir($upload_directory)) {
+    $to_download = readdir($source);
     echo "<a href='download.php?file=".$to_download."'>Download</a>";
   }
   
