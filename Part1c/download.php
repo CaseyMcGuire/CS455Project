@@ -1,5 +1,5 @@
 <?php
-$name = basename($_GET['file']);
+$name = basename($_FILES['file']);
 $file = "uploads/$name";
 
 if(!$file) {
