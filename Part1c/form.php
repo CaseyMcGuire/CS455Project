@@ -13,7 +13,7 @@
 		<input type="text" name="firstname" /> <br />
 		<label class="heading" for="lastname"> Last Name: </label>
 		<input type="text" name="lastname" /> <br />
-		<label class="heading" for="ssn"> SSN: </label>
+		<label class="heading" for="ssn"> SSN(###-##-####): </label>
 		<input type="text" name="ssn" /> <br />
 		
 		<input type="submit" value="Sign up" />
@@ -27,7 +27,7 @@
                 echo "Please enter a last name <br />";
 	    }
 	    if(isset($_GET["ssn"]) && $_GET["ssn"]){
-                echo "Please enter an ssn.";
+                echo "Please enter a valid ssn.";
 	    }
 	    
 	    

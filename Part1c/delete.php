@@ -5,7 +5,7 @@ try {
 
   $db->exec("delete from onboard where ssn='".$_GET['ssn']."'AND flight_no='".$_GET['flight_no']."'");
   
-  header("Location: myFirstDB.php");
+  header("Location: index.php");
   
   $db = NULL;
   

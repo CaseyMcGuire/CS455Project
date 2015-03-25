@@ -40,7 +40,7 @@
 	    print $e->getMessage();
 	}
 	?>
-	<form action="purchase.php" id="ticket-form">
+	<form action="purchase.php" id="ticket-form" method="post">
 	    <input type="submit">
 	</form>
     </body>
