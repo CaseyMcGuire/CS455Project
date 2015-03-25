@@ -37,7 +37,9 @@ try
                 echo "</tr>";
         }
         echo "</table>";
-
+echo "<a href='form.php'>Add Passenger</a>";
+echo "<br />";
+echo "<a href='new_ticket.php'>Buy Ticket</a>";
         $db = NULL;
 
 }
