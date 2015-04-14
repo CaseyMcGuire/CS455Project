@@ -51,7 +51,7 @@ create table Follows(
 
        foreign key(follower_email) references User(email)
        	       on update cascade
-	       on delete cascade
+	       on delete cascade,
 
        foreign key(followee_email) references User(email)
        	       on update cascade
