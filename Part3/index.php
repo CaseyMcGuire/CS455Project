@@ -1,6 +1,7 @@
 <html>
 <?php
-include("header.php");
+include("util/header.php");
+   
 ?>
      <div class="container">
      	<div class="jumbotron">
@@ -13,7 +14,7 @@ include("header.php");
 		    <a href="users/new.php" class="btn btn-primary btn-lg">Sign Up</a>
 		    <a href="sessions/new.php" class="btn btn-success btn-lg">Login</a>
 		<?php } ?>
-		
+
 	    </div>
 	</div>
      </div>
