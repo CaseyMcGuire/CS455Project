@@ -13,12 +13,12 @@ include("../util/header.php");
 
 		<div class="form-element">
 		<label for="email">Email</label>
-		<input id="email"  type="email" placeholder="Email">
+		<input id="email" name="email"  type="email" placeholder="Email">
 		</div>
 	
 		<div class="form-element">
 		<label for="password">Password</label>
-		<input id="password" type="password" placeholder="Password">
+		<input id="password" name="password" type="password" placeholder="Password">
 		</div>
 		
 		<button type="submit" class="pure-button pure-button-primary">Create</button>

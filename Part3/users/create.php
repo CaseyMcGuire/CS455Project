@@ -13,7 +13,7 @@ try{
   var_dump($_POST);
 
   $email = $_POST['email'];
-  $password = crypt($_POST['password']);
+  $password = crypt($_POST['password'], 'asdf');
 
   $user_query = 'INSERT INTO User values (:email, :password, :screen_name)';
   $user_query = $db->prepare($user_query);
