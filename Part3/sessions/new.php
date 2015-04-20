@@ -2,9 +2,12 @@
 <html>
 <?php
 
-//allow people to sign up here
-include("../util/header.php");
+include("../util/assets.php");
 ?>
+
+<body>
+
+<?php include("../util/header.php"); ?>
     <div class="signup-login-form">
 	   
 	    <form action="create.php" class="pure-form" method ="post">

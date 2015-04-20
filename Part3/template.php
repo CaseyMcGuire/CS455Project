@@ -3,6 +3,7 @@
 	//To make all pages look good, use this template
 include("header.php");
 ?>
-    	
-    </body>
+<body>
+<?php include('util/header.php')?>
+</body>
 </html>

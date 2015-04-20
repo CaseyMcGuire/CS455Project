@@ -1,8 +1,9 @@
 <html>
 <?php
-include("util/header.php");
-
+include("util/assets.php");
 ?>
+<body>
+<?php include("util/header.php"); ?>
      <div class="container">
      	<div class="jumbotron">
 	   

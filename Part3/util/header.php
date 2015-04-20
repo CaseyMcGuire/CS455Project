@@ -1,11 +1,6 @@
 <?php session_start() ?>
 
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <link rel="stylesheet" href="../assets/styling.css">
-</head>
-<body>
+
     
     <nav class="navbar navbar-default"> 
 	<div class="container-fluid">
