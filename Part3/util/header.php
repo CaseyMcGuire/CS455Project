@@ -13,7 +13,7 @@
 		<?php if(user_logged_in()){ ?>
 		    <li><a href="#">Followed</a></li>
 		    <li><a href="#">Followers</a></li>
-		    <li><a href="#">My Blog</a></li>
+		    <li><a href="users/show.php">My Blog</a></li>
 		<?php } ?>
 		<li><a href="#">Random Blog</a></li>
 	    

@@ -15,10 +15,6 @@ include("util/assets.php");
 		    <a href="users/new.php" class="btn btn-primary btn-lg">Sign Up</a>
 		    <a href="sessions/new.php" class="btn btn-success btn-lg">Login</a>
 		<?php } ?>
-		
-		<textarea></textarea>
-
-
 	    </div>
 	</div>
      </div>

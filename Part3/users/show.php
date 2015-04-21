@@ -5,7 +5,7 @@ include("../util/assets.php");
 <body>
 <?php include("../util/header.php") ?>
 <?php 
-    if(!isset($_GET["email"])){
+    if(!isset($_GET["email"]) && !user_logged_in()){
 	header("Location: ../");
     }
  ?>
@@ -19,30 +19,30 @@ include("../util/assets.php");
 		$db = new PDO("sqlite:../database/blog.sqlite3");
 		
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		if(isset($_GET["email"])){
+		    $email = $_GET["email"];
+		}else{
+		    $email = $_SESSION["username"];
+		}
 
-		$email = $_GET["email"];
-		if(!isset($_GET["page"])){
+		if(isset($_GET["page"])){
 		    $page = $_GET["page"];
 		}else{
 		    $page = 1;
 		}
 
-		$query = "Select * from Post where email=:email";
+		$query = "Select * from Post where user_email=:email";
 
 		$statement = $db->prepare($query);
+		$statement->bindValue(':email', $email);
 
-		$statement->execute(['email' => $email]);
+		$statement->execute();
+
+		$result = $statement->fetchAll();
 
 		foreach($result as $tuple){
-		?>
-		
-	    <div class="blog-post"
-		 <?php
-		echo "hello";
-		?>
-	    </div>
-		
-	    <?php
+
 		}
 
 	    $db = NULL;
