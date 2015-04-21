@@ -4,6 +4,7 @@ var_dump($_POST);
 include('../util/header.php');
 if(!user_logged_in() || !isset($_POST)){
   header('Location: /');
+  exit;
 }
 
 try{
@@ -29,28 +30,30 @@ try{
   
   $user_query->execute();
   
-  $result = $db->query('SELECT * from POST');
+  //  $result = $db->query('SELECT * from POST');
   
-  foreach($result as $tuple){
-    var_dump($tuple);
-    echo '<br />';
-  }
+  //foreach($result as $tuple){
+  //var_dump($tuple);
+    
+  //    echo '<br />';
+  //  }
 
 
 
-    $result = $db->query("Select * from POST where user_email='" . $user_email . "'");
-    echo "Select * from POST where user_email='" . $user_email . "'";
+  //    $result = $db->query("Select * from POST where user_email LIKE '$user_email'");
+  //    echo "SELECT * from POST where user_email='$user_email'";
 
-    echo "====================================================";
+  //    echo "====================================================";
 
-  foreach($result as $tuple){
-    var_dump($tuple);
-    echo '<br />';
-  }
+  //  foreach($result as $tuple){
+  //    var_dump($tuple);
+
+//    echo '<br />';
+//  }
 
   $db = NULL;
 
-  //header('Location: /');
+  header('Location: /');
   
 }catch(PDOException $e){
   print 'Exception : ' . $e->getMessage();

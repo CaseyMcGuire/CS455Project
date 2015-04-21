@@ -38,7 +38,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		    $page = 1;
 		}
 
-		$query = "Select * from Post where user_email=:email";
+		$query = "Select * from Post where user_email LIKE :email";
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':email', $email);
@@ -46,14 +46,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 		$statement->execute();
 
-		//		$result = $statement->fetchAll();
-
-
-		echo "Select * from Post where user_email='" . $email . "'";
-		//		$result = $db->query("Select * from Post");// where user_email='" . $email . "'" );
-		$result = $db->query("Select * from Post where user_email='" . $email . "'");
-
-		
+		$result = $statement->fetchAll();
 		
 		foreach($result as $tuple){
 		  echo "<br />";

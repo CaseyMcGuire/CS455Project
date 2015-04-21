@@ -20,8 +20,13 @@ try{
     echo 'hello';
     echo '<br />';
     var_dump($result);
+
+
+
+    //if there is not user with that email or the password doesn't match, go back to login page
     if(!$result || strcmp($result['password'], $password) != 0){
 	header('Location: new.php?error=1');	
+	exit;
     }
 
     echo '<br />';
