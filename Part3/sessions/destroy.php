@@ -1,4 +1,7 @@
 <?php
-//allow user to sign out here
+include('../util/header.php');
+unset($_SESSION['username']);
+unset($_SESSION['loggedin']);
+
 
 ?>

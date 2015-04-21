@@ -16,7 +16,11 @@
 		    <li><a href="/users/show.php">My Blog</a></li>
 		<?php } ?>
 		<li><a href="#">Random Blog</a></li>
-	    
+
+    <?php if(user_logged_in()){ ?>			
+	<a href="/sessions/destroy.php" class="btn btn-danger"> Log Out</a>
+    <?php } ?>
+
 	    </ul>
 	</div>
 	

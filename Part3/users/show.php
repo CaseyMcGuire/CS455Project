@@ -46,10 +46,20 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 		$statement->execute();
 
-		$result = $statement->fetchAll();
+		//		$result = $statement->fetchAll();
 
+
+		echo "Select * from Post where user_email='" . $email . "'";
+		//		$result = $db->query("Select * from Post");// where user_email='" . $email . "'" );
+		$result = $db->query("Select * from Post where user_email='" . $email . "'");
+
+		
+		
 		foreach($result as $tuple){
+		  echo "<br />";
 		  var_dump($tuple);
+		  echo $tuple["user_email"];
+		  echo "<br />";
 		}
 
 	    $db = NULL;

@@ -19,6 +19,7 @@ try{
   
   $user_query = "INSERT INTO Post (user_email, title, content, date, time) values(:user_email, :title, :content, :date, :time)";
   $user_query = $db->prepare($user_query);
+
   
   $user_query->bindValue(':user_email', $user_email, SQLITE3_TEXT);
   $user_query->bindValue(':title', $title, SQLITE3_TEXT);
@@ -35,9 +36,21 @@ try{
     echo '<br />';
   }
 
+
+
+    $result = $db->query("Select * from POST where user_email='" . $user_email . "'");
+    echo "Select * from POST where user_email='" . $user_email . "'";
+
+    echo "====================================================";
+
+  foreach($result as $tuple){
+    var_dump($tuple);
+    echo '<br />';
+  }
+
   $db = NULL;
 
-  header('Location: /');
+  //header('Location: /');
   
 }catch(PDOException $e){
   print 'Exception : ' . $e->getMessage();

@@ -37,7 +37,7 @@ try{
     session_start();
 
     $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $result['email'];
+    $_SESSION['username'] = $email;
 
     header('Location:/');
     echo "<br />";

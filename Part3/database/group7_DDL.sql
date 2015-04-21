@@ -24,7 +24,7 @@ create table Comment(
 
        foreign key(post_id) references Post(id)
        	       on update cascade
-       	       on delete cascade
+       	       on delete cascade,
 
        foreign key(user_email) references User(email)
        	       on update cascade
