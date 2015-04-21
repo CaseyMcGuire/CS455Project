@@ -58,7 +58,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 //		    echo "<br />";
 //		    echo $tuple['time'];
 		    echo "<div class=\"panel-heading\">";
-		    echo "<h2>" . $tuple['title'] . "</h2>";
+		    echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a></h2>";
 		    echo "</div>";
 
 		    echo  "<div class=\"panel-body\">";
@@ -109,13 +109,13 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 			if($i == $page){
 		    ?>
 			<li class="active">
-			    <?php echo "<a href=\"show.php?page=$i\">" . $i . "</a>"; ?>
+			    <?php echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>"; ?>
 			</li>
 		    <?php
 		}else{
 		    ?>
 			<li>
-                            <?php echo "<a href=\"show.php?page=$i\">" . $i . "</a>"; ?>
+                            <?php echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>"; ?>
 			</li>
 			
 			
