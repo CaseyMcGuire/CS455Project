@@ -5,11 +5,16 @@ include("../util/assets.php");
 <body>
 <?php include("../util/header.php") ?>
 <?php 
-    if(!isset($_GET["email"]) && !user_logged_in()){
-	header("Location: ../");
-    }
- ?>
-    <div class="container">
+ //if there is no query string and the user is not logged in, we don't know which
+ //blog to show them so just redirect to home page
+if(!isset($_GET["email"]) && !user_logged_in()){
+  header("Location: ../");
+}elseif(!isset($_GET["email"]) && user_logged_in()){ 
+?>
+    <a href="../posts/new.php" class="btn btn-primary btn-large">New Post </a>
+<?php } ?>
+  
+  <div class="container">
 	<div class="jumbotron">
 	    
 	    <?php
@@ -20,6 +25,7 @@ include("../util/assets.php");
 		
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
+		//determine if its the current user's blog or someone else's
 		if(isset($_GET["email"])){
 		    $email = $_GET["email"];
 		}else{
