@@ -16,9 +16,9 @@ include("util/assets.php");
 		    <a href="sessions/new.php" class="btn btn-success btn-lg">Login</a>
 		<?php } ?>
 		
-		<textarea id="widgEditor">asdfaf</textarea>
-   <link rel="stylesheet" href="assets/widgEditor.css" />
-   <script src="assets/widgEditor.js"></script>
+		<textarea></textarea>
+
+
 	    </div>
 	</div>
      </div>
