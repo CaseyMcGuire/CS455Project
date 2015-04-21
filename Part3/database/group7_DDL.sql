@@ -20,7 +20,7 @@ create table Comment(
        user_email TEXT,
        content TEXT,
        date TEXT,
-       time TEXT CHECK(GLOB('??:??', time)),
+       time TEXT CHECK(GLOB('??:??:??', time)),
 
        foreign key(post_id) references Post(id)
        	       on update cascade
@@ -37,7 +37,7 @@ create table Post(
        title TEXT,
        content TEXT,
        date TEXT,
-       time TEXT CHECK(GLOB('??:??', time)),
+       time TEXT CHECK(GLOB('??:??:??', time)),
 
        foreign key(user_email) references User(email)
        	       on update cascade

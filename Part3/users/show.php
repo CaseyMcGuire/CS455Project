@@ -38,7 +38,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		    $page = 1;
 		}
 
-		$query = "Select * from Post where user_email LIKE :email";
+		$query = "Select * from Post where user_email LIKE :email ORDER BY date, time DESC";
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':email', $email);
@@ -49,10 +49,22 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		$result = $statement->fetchAll();
 		
 		foreach($result as $tuple){
-		  echo "<br />";
-		  var_dump($tuple);
-		  echo $tuple["user_email"];
-		  echo "<br />";
+		    echo "<div class=\"panel panel-default\">";
+		    echo $tuple['date'];
+		    echo "<br />";
+		    echo $tuple['time'];
+		    echo "<div class=\"panel-heading\">";
+		    echo "<h2>" . $tuple['title'] . "</h2>";
+		    echo "</div>";
+
+		    echo  "<div class=\"panel-body\">";
+		   
+		    echo "<div class=\"blog-text\">" . $tuple['content'] . "</div>";
+
+		    echo "</div>";
+		    echo "</div>";
+
+		    echo "<br />";
 		}
 
 	    $db = NULL;

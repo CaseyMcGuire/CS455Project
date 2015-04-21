@@ -16,7 +16,7 @@ try{
   $title = $_POST['title'];
   $content = $_POST['content'];
   $date = date('Y') . '-' . date('m') . '-' . date('d');
-  $time = date('H') . ':' . date('i');
+  $time = date('H') . ':' . date('i') . ':' . date('s');
   
   $user_query = "INSERT INTO Post (user_email, title, content, date, time) values(:user_email, :title, :content, :date, :time)";
   $user_query = $db->prepare($user_query);
