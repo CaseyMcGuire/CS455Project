@@ -42,13 +42,14 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':email', $email);
+		
 
 		$statement->execute();
 
 		$result = $statement->fetchAll();
 
 		foreach($result as $tuple){
-
+		  var_dump($tuple);
 		}
 
 	    $db = NULL;
