@@ -53,7 +53,7 @@ try{
 
   $db = NULL;
 
-  header('Location: /');
+  header('Location: /users/show.php');
   
 }catch(PDOException $e){
   print 'Exception : ' . $e->getMessage();
