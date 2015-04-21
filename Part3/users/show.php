@@ -1,4 +1,4 @@
-<html>
+
 <?php
 include("../util/assets.php");
 ?>
@@ -35,24 +35,28 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		if(isset($_GET["page"])){
 		    $page = $_GET["page"];
 		}else{
-		    $page = 1;
+		    $page = 0;
 		}
 
-		$query = "Select * from Post where user_email LIKE :email ORDER BY date, time DESC";
+		
+
+		$query = "Select * from Post where user_email LIKE :email ORDER BY date, time DESC LIMIT 10 OFFSET " . $page*10;
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':email', $email);
 		
-
+		
 		$statement->execute();
 
 		$result = $statement->fetchAll();
+
+
 		
 		foreach($result as $tuple){
 		    echo "<div class=\"panel panel-default\">";
-		    echo $tuple['date'];
-		    echo "<br />";
-		    echo $tuple['time'];
+//		    echo $tuple['date'];
+//		    echo "<br />";
+//		    echo $tuple['time'];
 		    echo "<div class=\"panel-heading\">";
 		    echo "<h2>" . $tuple['title'] . "</h2>";
 		    echo "</div>";
@@ -66,16 +70,59 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 		    echo "<br />";
 		}
+		
+		$query = "SELECT COUNT(*) from POST where user_email LIKE :email";
+		$statement = $db->prepare($query);
+		$statement->bindValue(':email', $email);
+		$statement->execute();
+		$result = $statement->fetchAll();
+
+		$numRows = intval($result[0][0]);
+
 
 	    $db = NULL;
+
+
+//		echo "<nav>";
+//		echo "<ul class=\"pagination\">";
+//		for($i = 0; $i < $numRows; $i++){
+//		    if($i == $page){
+//			echo "<li class=\"active\">$i</li>";
+//		    }else{
+//			echo "<li> $i </li>";
+//		    }
+//		}
+//		echo "</ul>";
+		
+		//		echo "</nav>";
 	    }catch(PDOException $e){
 		print 'Exception : ' . $e->getMessage();
 	    }
 	    
 	    ?>
-
-
+	    
+	    
+	    <nav>
+		<ul class="pagination">
+		    <?php
+		    for($i = 0; $i <= $numRows/10; $i++){
+			if($i == $page){
+		    ?>
+			<li class="active">
+			    <?php echo "<a href=\"show.php?page=$i\">" . $i . "</a>"; ?>
+			</li>
+		    <?php
+		}else{
+		    ?>
+			<li>
+                            <?php echo "<a href=\"show.php?page=$i\">" . $i . "</a>"; ?>
+			</li>
+			
+			
+		    <?php }} ?>
+		</ul>
+	    </nav>
 	</div>
-    </div>
+  </div>
 </body>
 </html>
