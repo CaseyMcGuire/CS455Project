@@ -28,7 +28,7 @@ if(!isset($_GET['id'])){
     ?>
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-		<h3><?php echo $result['title']; ?></h3>
+		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
 	    </div>
 	    <div class="panel-body">
 		<div class="blog-text">
@@ -38,7 +38,7 @@ if(!isset($_GET['id'])){
 	</div>
     <?php
 
-    $stmt = $db->prepare('Select * from Comment where post_id=:post_id ORDER BY date,time');
+    $stmt = $db->prepare('Select * from Comment where post_id=:post_id ORDER BY date,time DESC');
 
     $stmt->bindValue(':post_id', $_GET['id']);
     $stmt->execute();

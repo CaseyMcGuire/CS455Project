@@ -15,7 +15,7 @@
 		    <li><a href="#">Followers</a></li>
 		    <li><a href="/users/show.php">My Blog</a></li>
 		<?php } ?>
-		<li><a href="#">Random Blog</a></li>
+		<li><a href="/util/random.php">Random Blog</a></li>
 	    </ul>
     <?php if(user_logged_in()){ ?>			
 	<div class="navbar-right">

@@ -14,9 +14,9 @@ if(!isset($_GET["email"]) && !user_logged_in()){
     <a href="../posts/new.php" class="btn btn-primary btn-large">New Post </a>
 <?php } ?>
   
-  <div class="container">
-	<div class="jumbotron">
-	    
+<div class="container">
+    <div class="jumbotron">
+	<h2>Welcome to <?php echo $_SESSION['username']; ?>'s blog!</h2>
 	    <?php
 	    
 	    try{
@@ -82,19 +82,6 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 	    $db = NULL;
 
-
-//		echo "<nav>";
-//		echo "<ul class=\"pagination\">";
-//		for($i = 0; $i < $numRows; $i++){
-//		    if($i == $page){
-//			echo "<li class=\"active\">$i</li>";
-//		    }else{
-//			echo "<li> $i </li>";
-//		    }
-//		}
-//		echo "</ul>";
-		
-		//		echo "</nav>";
 	    }catch(PDOException $e){
 		print 'Exception : ' . $e->getMessage();
 	    }
