@@ -58,6 +58,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 
 		
 		foreach($result as $tuple){
+		    
 		    echo "<div class=\"panel panel-default\">";
 //		    echo $tuple['date'];
 //		    echo "<br />";
@@ -95,8 +96,25 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 	    
 	    
 	    <nav>
-		<ul class="pagination">
+		<ul class="pagination pagination-lg">
 		    <?php
+		    if($page == 0){
+			?>
+			<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
+			<?php
+
+			}else{
+			?>
+			    <li>
+				<?php
+				$prev_page = $page - 1;
+				echo "<a href=\"show.php?page=$prev_page\" aria-label=\"Previous\">"; 
+				?>
+				<span aria-hidden="true">Previous</span>
+				</a>
+			    </li>
+		    <?php
+			}
 		    for($i = 0; $i <= $numRows/10; $i++){
 			if($i == $page){
 		    ?>
@@ -111,7 +129,24 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 			</li>
 			
 			
-		    <?php }} ?>
+		    <?php }} 
+		    if($page == (int)($numRows/10)){
+
+
+		    ?>
+			<li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
+		    <?php
+			}else{
+		    ?>
+			<li>
+			    <?php
+			    
+			    $next_page = $page + 1;
+			    echo "<a href=\"show.php?page=$next_page\" aria-label=\"Next\">";
+			    ?>
+			    <span aria-hidden="true">Next</span></a>
+			    </li>
+		    <?php } ?>
 		</ul>
 	    </nav>
 	</div>
