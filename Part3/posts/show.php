@@ -1,7 +1,7 @@
 <html>
 <?php
 include('../util/assets.php');
-var_dump($_GET);
+//var_dump($_GET);
 
 if(!isset($_GET['id'])){
     header('Location: /');
@@ -28,7 +28,7 @@ if(!isset($_GET['id'])){
     ?>
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-		<?php echo $result['title']; ?>
+		<h3><?php echo $result['title']; ?></h3>
 	    </div>
 	    <div class="panel-body">
 		<div class="blog-text">
@@ -48,12 +48,14 @@ if(!isset($_GET['id'])){
     foreach($result2 as $tuple){
     ?>
 	<div class="panel panel-info">
-	    <div class="panel-title">
+	    <div class="panel-heading">
 		<?php echo $tuple['user_email']; ?>
 	    </div>
 
 	    <div class="panel-body">
+		<div class="blog-text">
 		<?php echo $tuple['content']; ?>
+		</div>
 	    </div>
 	</div>
     <?php
