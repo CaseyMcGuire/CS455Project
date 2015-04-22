@@ -16,7 +16,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
   
 <div class="container">
     <div class="jumbotron">
-	<h2>Welcome to <?php echo $_SESSION['username']; ?>'s blog!</h2>
+
 	    <?php
 	    
 	    try{
@@ -31,6 +31,11 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		}else{
 		    $email = $_SESSION["username"];
 		}
+
+		?>
+
+	<h2>Welcome to <?php echo $email; ?>'s blog!</h2>
+		<?php
 
 		if(isset($_GET["page"])){
 		    $page = $_GET["page"];
