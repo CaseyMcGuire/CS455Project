@@ -47,7 +47,7 @@
             $result = $query->fetchAll();
             
             foreach($result as $tuple) {
-                echo "";
+                echo $tuple['id'];
             }
             
         }
