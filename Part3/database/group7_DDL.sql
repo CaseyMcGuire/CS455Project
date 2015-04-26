@@ -14,6 +14,20 @@ create table User(
        screen_name TEXT
 );
 
+create table Faves(
+	email TEXT,
+	id INTEGER,
+
+	PRIMARY KEY(email, id),
+
+	foreign key(email) references User(email)
+		on update cascade
+		on delete cascade,
+	foreign key(id) references Post(id)
+		on update cascade
+		on delete cascade
+);
+
 create table Comment(
        id INTEGER PRIMARY KEY,
        post_id INTEGER,
