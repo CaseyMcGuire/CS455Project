@@ -11,8 +11,8 @@
 
 
 		<?php if(user_logged_in()){ ?>
-		    <li><a href="#">Followed</a></li>
-		    <li><a href="#">Followers</a></li>
+		    <li><a href="#">Favorited</a></li>
+		    <!-- <li><a href="#">Followers</a></li> -->
 		    <li><a href="/users/show.php">My Blog</a></li>
 		<?php } ?>
 		<li><a href="/util/random.php">Random Blog</a></li>
