@@ -11,7 +11,7 @@
 
 
 		<?php if(user_logged_in()){ ?>
-		    <li><a href="#">Favorited</a></li>
+		    <li><a href="/faves/show.php">Favorited</a></li>
 		    <!-- <li><a href="#">Followers</a></li> -->
 		    <li><a href="/users/show.php">My Blog</a></li>
 		<?php } ?>
