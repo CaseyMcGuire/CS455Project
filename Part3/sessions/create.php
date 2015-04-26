@@ -5,8 +5,7 @@ try{
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $email = $_POST['email'];
-    // $password = crypt($_POST['password'], 'asdf');
-    $password = $_POST['password'];
+    $password = crypt($_POST['password'], 'asdf');
 
     var_dump($_POST);
     
