@@ -46,6 +46,8 @@
             // get favorited posts and store in an array
             $result = $query->fetchAll();
             
+            print $result;
+            
             foreach($result as $tuple) {
                 echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a></h2>";
                 
