@@ -5,7 +5,7 @@
     <?php
     if(!isset($_GET["email"]) && !user_logged_in()) {
         header("Location: ../");
-    }
+    }else{}
     ?>
     
     <div class="container">
