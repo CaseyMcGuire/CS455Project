@@ -16,6 +16,7 @@
               $db = new PDO("sqlite:../database/blog.sqlite3");
               $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               
+              $email = NULL;
               if(isset($_GET["email"])) {
                   $email = $_GET["email"];
               }
@@ -47,6 +48,9 @@
                 echo "";
             }
             
+            catch(PDOException $e) {
+                print 'Exception: ' . $e->getMessage();
+            }
             ?>
             
         </div>
