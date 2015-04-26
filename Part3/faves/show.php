@@ -46,6 +46,7 @@
             // get favorited posts and store in an array
             $result = $query->fetchAll();
             
+            print "email => " . $email;
             print $result;
             
             foreach($result as $tuple) {
