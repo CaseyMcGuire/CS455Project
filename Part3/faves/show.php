@@ -5,7 +5,7 @@
     <?php
     if(!isset($_GET["email"]) && !user_logged_in()) {
         header("Location: ../");
-    }else{}
+    }
     ?>
     
     <div class="container">
@@ -14,7 +14,7 @@
             <?php
             try {
               $db = new PDO("sqlite:../database/blog.sqlite3");
-              $db->setAttribute(PDO:ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               
               if(isset($_GET["email"])) {
                   $email = $_GET["email"];
