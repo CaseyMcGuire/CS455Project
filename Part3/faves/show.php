@@ -47,7 +47,7 @@
             $result = $query->fetchAll();
             
             foreach($result as $tuple) {
-                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\"></a>";
+                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$tuple['id']."</a>";
                 
             }
             
