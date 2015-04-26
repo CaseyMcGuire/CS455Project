@@ -44,9 +44,9 @@ insert into Faves values ('c@email', 12);
 insert into Faves values ('c@email', 11);
   
 insert into Faves values ('d@email', 20);
-insert into Faves values ('d@email', 22);
+insert into Faves values ('d@email', 23);
 insert into Faves values ('d@email', 24);
   
 insert into Faves values ('e@email', 16);
-insert into Faves values ('e@email', 22);
+insert into Faves values ('e@email', 23);
 insert into Faves values ('e@email', 25);
