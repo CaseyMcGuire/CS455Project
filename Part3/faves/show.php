@@ -47,7 +47,12 @@
             $result = $query->fetchAll();
             
             foreach($result as $tuple) {
-                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$tuple['id']."</a>";
+                $title_query = "select title from Post natural join Faves where id=\"".$tuple['id']."\"";
+                $query2 = $db->prepare($title_query);
+                $query2->execute();
+                $title_result = $query2->fetchAll();
+                
+                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$title_result[0]."</a>";
                 
             }
             
