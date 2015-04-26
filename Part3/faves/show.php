@@ -38,7 +38,8 @@
             }
             
             // query to select all posts favorited by user with given email
-            $query = "select id from faves where email=\"$email\"";
+            $query_string = "select id from faves where email=\"$email\"";
+            $query = db->prepare($query_string);
             $query->execute();
             
             // get favorited posts and store in an array
