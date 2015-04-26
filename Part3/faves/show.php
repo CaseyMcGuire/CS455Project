@@ -30,6 +30,7 @@
             
             <?php
             
+            $page = NULL;
             if(isset($_GET["page"])) {
                 $page = $_GET["page"];
             }
