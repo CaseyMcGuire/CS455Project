@@ -3,12 +3,6 @@
 .nullvalue NULL
 PRAGMA foreign_keys = ON;
 
-DROP TABLE IF EXISTS User;
-DROP TABLE IF EXISTS Faves;
-DROP TABLE IF EXISTS Comment;
-DROP TABLE IF EXISTS Post;
-DROP TABLE IF EXISTS Follows;
-
 create table User(
        email TEXT PRIMARY KEY,
        password TEXT,
