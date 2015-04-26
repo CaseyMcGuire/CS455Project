@@ -23,7 +23,7 @@
               else {
                   $email = $_SESSION["username"];
               }
-            } 
+            
             ?>
             
             <h2><?php echo $email; ?>'s saved posts:</h2>
@@ -48,6 +48,7 @@
                 echo "";
             }
             
+        }
             catch(PDOException $e) {
                 print 'Exception: ' . $e->getMessage();
             }
