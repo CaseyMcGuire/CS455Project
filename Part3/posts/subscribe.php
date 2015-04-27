@@ -9,7 +9,7 @@ try {
     $id_str = $_GET['id'];
     $id = intval($id_str);
 
-    $db->exec("insert into faves values($email,$id)");
+    // $db->exec("insert into faves values($email,$id)");
 
     header("../faves/show.php");
 }
