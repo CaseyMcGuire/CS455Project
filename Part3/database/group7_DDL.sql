@@ -19,12 +19,12 @@ create table Faves(
 	foreign key(email) references User(email)
 		on update cascade
 		on delete cascade,
-  foreign key(title) references Post(title)
-    on update cascade
-    on delete cascade,
 	foreign key(id) references Post(id)
 		on update cascade
-		on delete cascade
+		on delete cascade,
+  foreign key(title) references Post(title)
+    on update cascade
+    on delete cascade
 );
 
 create table Comment(
