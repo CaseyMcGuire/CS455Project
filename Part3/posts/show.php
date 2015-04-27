@@ -31,12 +31,9 @@ if(!isset($_GET['id'])){
 		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
         
         <h4>
-    	    <form action="subscribe.php" method="post">
-    		<div class="form-group">
-    		    <input type="hidden" name="id" class="form-control" placeholder="post id">
-    		</div>
-    		<label><input type="submit" class="btn btn-primary">Save Post</label>
-    	    </form>
+    	    <?php
+            echo "<a href=\"subscribe.php?id=".$result['id']."subscriber=".$_SESSION['username']."\">Save Post</a>";
+            ?>
         </h4>
         
 	    </div>
