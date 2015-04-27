@@ -30,9 +30,15 @@ if(!isset($_GET['id'])){
 	    <div class="panel-heading">
 		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
 	    </div>
+        <h4>
+            <?php
+            print $_SESSION['user_email'];
+            ?>
+        </h4>
 	    <div class="panel-body">
 		<div class="blog-text">
-		    <?php echo "asdfl;kjasdf;kj".$result['content']; ?>
+            <!-- this is where an individual post's content is displayed -->
+		    <?php echo .$result['content']; ?>
 		</div>
 	    </div>
 	</div>
