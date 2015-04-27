@@ -51,7 +51,7 @@
                 $query2 = $db->prepare($title_query);
                 $query2->execute();
                 $title_result = $query2->fetchAll();
-                
+                print "-----------------".$title_result;
                 echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$title_result."</a>";
                 
             }
