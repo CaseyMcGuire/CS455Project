@@ -31,22 +31,22 @@ insert into Post values (24, 'g@email', '23', '23', '2015-04-27', '22:14:14');
 insert into Post values (25, 'h@email', '24', '24', '2015-04-27', '22:14:15');
 insert into Post values (26, 'h@email', '25', '25', '2015-04-27', '22:14:16');
   
-insert into Faves values ('a@email', 12);
-insert into Faves values ('a@email', 13);
-insert into Faves values ('a@email', 14);
+insert into Faves values ('a@email', 12, '12');
+insert into Faves values ('a@email', 13, '13');
+insert into Faves values ('a@email', 14, '14');
 
-insert into Faves values ('b@email', 10);
-insert into Faves values ('b@email', 14);
-insert into Faves values ('b@email', 15);
+insert into Faves values ('b@email', 10, '10');
+insert into Faves values ('b@email', 14, '14');
+insert into Faves values ('b@email', 15, '15');
   
-insert into Faves values ('c@email', 13);
-insert into Faves values ('c@email', 12);
-insert into Faves values ('c@email', 11);
+insert into Faves values ('c@email', 13, '13');
+insert into Faves values ('c@email', 12, '12');
+insert into Faves values ('c@email', 11, '11');
   
-insert into Faves values ('d@email', 20);
-insert into Faves values ('d@email', 23);
-insert into Faves values ('d@email', 24);
+insert into Faves values ('d@email', 20, '20');
+insert into Faves values ('d@email', 23, '23');
+insert into Faves values ('d@email', 24, '24');
   
-insert into Faves values ('e@email', 16);
-insert into Faves values ('e@email', 23);
-insert into Faves values ('e@email', 25);
+insert into Faves values ('e@email', 16, '16');
+insert into Faves values ('e@email', 23, '23');
+insert into Faves values ('e@email', 25, '25');
