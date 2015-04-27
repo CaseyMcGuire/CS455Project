@@ -24,6 +24,7 @@ try {
 }
 catch(PDOException $e) {
     echo "Exception ".$e->getMessage();
+    header("Location: /faves/show.php");
 }
 
 
