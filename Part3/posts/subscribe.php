@@ -14,7 +14,7 @@ try {
     echo $dump;
     echo "\n";
     
-    $query = $db->prepare("INSERT INTO Faves VALUES("\"".$email."\",".$id.")");
+    $query = $db->prepare("INSERT INTO Faves VALUES(\"".$email."\",".$id.")");
     
     $query->execute();
     
