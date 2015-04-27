@@ -29,9 +29,16 @@ if(!isset($_GET['id'])){
 	<div class="panel panel-default">
 	    <div class="panel-heading">
 		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
+        
         <h4>
-            <a href="subscribe.php">Subscribe</a>
+    	    <form action="subscribe.php" method="post">
+    		<div class="form-group">
+    		    <input type="hidden" name="id" class="form-control" placeholder="post id">
+    		</div>
+    		<input type="submit" class="btn btn-primary btn-lg btn-block">
+    	    </form>
         </h4>
+        
 	    </div>
 	    <div class="panel-body">
 		<div class="blog-text">
