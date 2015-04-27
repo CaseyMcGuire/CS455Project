@@ -52,6 +52,7 @@
                 $query2->execute();
                 $title_result = $query2->fetchAll();
                 print "-----------------".$title_result;
+                foreach($title_result as $name){print "printing". $name;}
                 echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$title_result."</a>";
                 
             }
