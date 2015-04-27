@@ -12,9 +12,9 @@ try {
     print "$email";
     print "$id";
 
-    // $db->exec("insert into faves values($email,$id)");
+    $db->exec("insert into faves values(".$email.",".$id")");
 
-    header("../faves/show.php");
+    header("Location: /faves/show.php");
 }
 catch(PDOException $e) {
     print "Exception ".$e->getMessage();
