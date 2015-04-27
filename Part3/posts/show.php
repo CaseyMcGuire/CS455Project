@@ -32,7 +32,7 @@ if(!isset($_GET['id'])){
 	    </div>
 	    <div class="panel-body">
 		<div class="blog-text">
-		    <?php echo $result['content']; ?>
+		    <?php echo "asdfl;kjasdf;kj".$result['content']; ?>
 		</div>
 	    </div>
 	</div>
