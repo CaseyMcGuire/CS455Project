@@ -8,6 +8,9 @@ try {
     $email = $_GET['subscriber'];
     $id_str = $_GET['id'];
     $id = intval($id_str);
+    
+    print "$email";
+    print "$id";
 
     // $db->exec("insert into faves values($email,$id)");
 
