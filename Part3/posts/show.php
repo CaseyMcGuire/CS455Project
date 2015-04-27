@@ -38,7 +38,7 @@ if(!isset($_GET['id'])){
 	    <div class="panel-body">
 		<div class="blog-text">
             <!-- this is where an individual post's content is displayed -->
-		    <?php echo .$result['content']; ?>
+		    <?php echo $result['content']; ?>
 		</div>
 	    </div>
 	</div>
