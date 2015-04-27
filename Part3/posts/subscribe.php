@@ -1,5 +1,6 @@
+
 <?
-echo $_GET['subscriber'];
-echo '\n';
-echo $_GET['id'];
+print $_GET['subscriber'];
+print '\n';
+print $_GET['id'];
 ?>
