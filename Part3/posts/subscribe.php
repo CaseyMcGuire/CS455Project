@@ -12,7 +12,7 @@ try {
     print "$email";
     print "$id";
 
-    $db->exec("insert into faves values(".$email.",".$id")");
+    $db->exec("INSERT INTO Faves VALUES(".$email.",".$id")");
 
     header("Location: /faves/show.php");
 }
