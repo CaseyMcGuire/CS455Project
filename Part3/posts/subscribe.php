@@ -11,9 +11,9 @@ try {
     
     $dump = var_dump($id);
     
-    print $dump;
-    print "\n";
-
+    echo $dump;
+    echo "\n";
+    
     $query = $db->prepare("INSERT INTO Faves VALUES(".$email.",".$id.")");
     
     $query->execute();
@@ -23,7 +23,7 @@ try {
     header("Location: /faves/show.php");
 }
 catch(PDOException $e) {
-    print "Exception ".$e->getMessage();
+    echo "Exception ".$e->getMessage();
 }
 
 
