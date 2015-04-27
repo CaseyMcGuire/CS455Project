@@ -52,7 +52,7 @@
                 $query2->execute();
                 $title_result = $query2->fetchAll();
                 
-                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$title_result[0]."</a>";
+                echo "<h2><a href=\"/posts/show.php?id=".$tuple['id']."\">".$title_result."</a>";
                 
             }
             
