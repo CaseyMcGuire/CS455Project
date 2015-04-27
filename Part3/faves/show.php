@@ -39,7 +39,7 @@
             }
             
             // query to select all posts favorited by user with given email
-            $query_string = "select title from faves natural join post where email=\"$email\"";
+            $query_string = "select * from faves natural join post where email=\"$email\"";
             $query = $db->prepare($query_string);
             $query->execute();
             
