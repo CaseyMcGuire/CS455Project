@@ -21,8 +21,7 @@ create table Faves(
     
 	foreign key(id,title) references Post(id,title)
 		on update cascade
-		on delete cascade,
-    
+		on delete cascade
 );
 
 create table Comment(
