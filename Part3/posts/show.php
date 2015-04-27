@@ -40,7 +40,9 @@ if(!isset($_GET['id'])){
         
         <h4>
     	    <?php
-            echo "<a href=\"subscribe.php?id=".$result['id']."&subscriber=".$_SESSION['username']."\">Save Post</a>";
+	    if(user_logged_in()){
+		echo "<a href=\"subscribe.php?id=".$result['id']."&subscriber=".$_SESSION['username']."\">Save Post</a>";
+	    }
             ?>
         </h4>
         

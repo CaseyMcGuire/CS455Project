@@ -36,7 +36,8 @@ try{
     $db = NULL;
     
 }catch(PDOException $e){
-  print 'Exception : ' . $e->getMessage();
-
+    print 'Exception : ' . $e->getMessage();
+    header("Location: /");
+    exit;
  }
 ?>

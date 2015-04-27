@@ -6,7 +6,7 @@ include("util/assets.php");
 <?php include("util/header.php"); ?>
      <div class="container">
      	<div class="jumbotron">
-
+	    <?php ?>
 	    <h1>Welcome to our blogging website.</h1>
 	    <div class="buttons">
    <?php if(user_logged_in()){ ?>

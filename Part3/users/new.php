@@ -6,7 +6,29 @@
 include("../util/assets.php");
 ?>
 <body>
-<?php include("../util/header.php"); ?>
+<?php 
+include("../util/header.php"); 
+
+if(isset($_GET['error'])){
+    $error = $_GET['error'];
+    
+    if(strcmp($error, '1') == 0){
+	$message = "You must enter a password";
+    }
+    elseif(strcmp($error, '2') == 0){
+	$message = "You must enter a username";
+    }
+    elseif(strcmp($error,'3') == 0){
+	$message = "That email address is already taken";
+    } 
+    else{
+	$message = "There was an error";
+    }
+
+    echo "<p class=\"bg-danger\">" . $message . "</h3>";
+}
+ ?>
+    
     <div class="signup-login-form">
 	   
 	    <form action="create.php" class="pure-form" method ="post">

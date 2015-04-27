@@ -9,7 +9,7 @@ if(!user_logged_in() || !isset($_POST)){
 
 try{
   $db = new PDO('sqlite:../database/blog.sqlite3');
-  
+    
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
   $user_email = $_SESSION['username'];
