@@ -48,7 +48,7 @@
             
             foreach($result as $tuple) {
                 
-                echo "<h3><a href=\"/posts/show.php?id=".$tuple['id']."\">".$tuple['id']."</a></h3>";
+                echo "<h3><a href=\"/posts/show.php?id=".$tuple['id']."\">".$tuple['title']."</a></h3>";
                 
             }
             
