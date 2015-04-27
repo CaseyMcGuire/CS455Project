@@ -6,7 +6,9 @@ require("../util/assets.php");
 <body>
     <?php
     require("../util/header.php");
-//var_dump($_SESSION);
+    if(isset($_GET['error'])){
+	echo "<p class=\"bg-danger\"> Every post must have content and title </p>";
+    }
     ?>
     <div class="container">
 	<div class=jumbotron">

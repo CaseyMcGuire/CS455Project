@@ -7,6 +7,11 @@ if(!user_logged_in() || !isset($_POST)){
   exit;
 }
 
+if(empty($_POST['title']) || empty($_POST['content'])){
+  header('Location: new.php?error=1');
+  exit;
+}
+
 try{
   $db = new PDO('sqlite:../database/blog.sqlite3');
     
