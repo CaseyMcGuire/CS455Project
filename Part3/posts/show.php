@@ -30,9 +30,7 @@ if(!isset($_GET['id'])){
 	    <div class="panel-heading">
 		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
         <h4>
-            <?php
-            print $_SESSION['username'];
-            ?>
+            <a href="subscribe.php">Subscribe</a>
         </h4>
 	    </div>
 	    <div class="panel-body">
