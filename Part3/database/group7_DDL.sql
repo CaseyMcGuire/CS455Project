@@ -54,17 +54,3 @@ create table Post(
 	       on delete cascade
 );
 
-create table Follows(
-       follower_email TEXT,
-       followee_email TEXT,
-       PRIMARY KEY(follower_email, followee_email),
-
-       foreign key(follower_email) references User(email)
-       	       on update cascade
-	       on delete cascade,
-
-       foreign key(followee_email) references User(email)
-       	       on update cascade
-	       on delete cascade
-
-);

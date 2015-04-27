@@ -1,11 +1,11 @@
-insert into User values ('a@email', 'p4ssword_a', 'user_a');
-insert into User values ('b@email', 'p4ssword_b', 'user_b');
-insert into User values ('c@email', 'p4ssword_c', 'user_c');
-insert into User values ('d@email', 'p4ssword_d', 'user_d');
-insert into User values ('e@email', 'p4ssword_e', 'user_e');
-insert into User values ('f@email', 'p4ssword_f', 'user_f');
-insert into User values ('g@email', 'p4ssword_g', 'user_g');
-insert into User values ('h@email', 'p4ssword_h', 'user_h');
+insert into User values ('a@email', 'asm.2nkA.RiWA', 'user_a');
+insert into User values ('b@email', 'asm.2nkA.RiWA', 'user_b');
+insert into User values ('c@email', 'asm.2nkA.RiWA', 'user_c');
+insert into User values ('d@email', 'asm.2nkA.RiWA', 'user_d');
+insert into User values ('e@email', 'asm.2nkA.RiWA', 'user_e');
+insert into User values ('f@email', 'asm.2nkA.RiWA', 'user_f');
+insert into User values ('g@email', 'asm.2nkA.RiWA', 'user_g');
+insert into User values ('h@email', 'asm.2nkA.RiWA', 'user_h');
   
 insert into Post values (10, 'a@email', '10', '10', '2015-04-27', '22:14:01');
 insert into Post values (11, 'a@email', '11', '11', '2015-04-27', '22:14:02');
