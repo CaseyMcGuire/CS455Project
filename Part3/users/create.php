@@ -1,8 +1,21 @@
 <?php
 
+if(!isset($_POST['password']) || empty($_POST['password'])){
+  header("Location:new.php?error=1");
+  exit;
+}
+
+if(!isset($_POST['email']) || empty($_POST['email'])){
+  header("Location:new.php?error=2");
+  exit;
+}
+
 if(strcmp($_POST['password'], $_POST['password_again']) != 0){
   header('Location:new.php?password=1');
+  exit;
 }
+
+
 
 try{
 
@@ -22,14 +35,8 @@ try{
   $user_query->bindValue(':password', $password, SQLITE3_TEXT);
   $user_query->bindValue(':screen_name', $email, SQLITE3_TEXT);
 
-  $user_query->execute();
+    $user_query->execute();
 
-  $result = $db->query('SELECT * FROM User');
-
-//    foreach($result as $tuple){
-//	echo $tuple['email'] . ' ' . $tuple['password'];
-//	echo '<br />';
-  //  }
 
     header('Location:/');
 
@@ -37,7 +44,7 @@ try{
     
 }catch(PDOException $e){
     print 'Exception : ' . $e->getMessage();
-    header("Location: /");
+    header("Location:new.php?error=3");
     exit;
  }
 ?>

@@ -60,9 +60,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		foreach($result as $tuple){
 		    
 		    echo "<div class=\"panel panel-default\">";
-//		    echo $tuple['date'];
-//		    echo "<br />";
-//		    echo $tuple['time'];
+
 		    echo "<div class=\"panel-heading\">";
 		    echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a></h2>";
 		    echo "</div>";
