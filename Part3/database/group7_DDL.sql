@@ -12,12 +12,16 @@ create table User(
 create table Faves(
 	email TEXT,
 	id INTEGER,
+  title TEXT,
 
 	PRIMARY KEY(email, id),
 
 	foreign key(email) references User(email)
 		on update cascade
 		on delete cascade,
+  foreign key(title) references Post(title)
+    on update cascade
+    on delete cascade,
 	foreign key(id) references Post(id)
 		on update cascade
 		on delete cascade
