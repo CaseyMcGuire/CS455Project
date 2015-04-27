@@ -29,12 +29,12 @@ if(!isset($_GET['id'])){
 	<div class="panel panel-default">
 	    <div class="panel-heading">
 		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
-	    </div>
         <h4>
             <?php
             print $_SESSION['username'];
             ?>
         </h4>
+	    </div>
 	    <div class="panel-body">
 		<div class="blog-text">
             <!-- this is where an individual post's content is displayed -->
