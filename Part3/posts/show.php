@@ -32,7 +32,7 @@ if(!isset($_GET['id'])){
 	    </div>
         <h4>
             <?php
-            print $_SESSION['user_email'];
+            print $_SESSION['user_name'];
             ?>
         </h4>
 	    <div class="panel-body">
