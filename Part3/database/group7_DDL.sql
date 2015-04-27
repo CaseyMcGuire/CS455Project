@@ -13,7 +13,7 @@ create table Faves(
 	email TEXT,
 	id INTEGER,
   title TEXT,
-	PRIMARY KEY(email, id, title),
+	PRIMARY KEY(email, id),
 
 	foreign key(email) references User(email)
 		on update cascade
