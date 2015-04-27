@@ -9,8 +9,10 @@ try {
     $id_str = $_GET['id'];
     $id = intval($id_str);
     
-    print "$email";
-    print "$id";
+    $dump = var_dump($id);
+    
+    print $dump;
+    print "\n";
 
     $db->exec("INSERT INTO Faves VALUES(".$email.",".$id.")");
 
