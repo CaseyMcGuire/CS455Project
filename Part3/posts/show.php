@@ -24,7 +24,15 @@ if(!isset($_GET['id'])){
 	$stmt->execute();
 
 	$result = $stmt->fetch();
+	
 
+	//if this post belongs to the viewer currently viewing it, set a sentinel variable
+	//so they can delete posts.
+	if(user_logged_in() && strcmp($_SESSION['username'], $result['user_email']) == 0){
+	    $is_user_post = true;
+	}else{
+	    $is_user_post = false;
+	}
     ?>
 	<div class="panel panel-default">
 	    <div class="panel-heading">
@@ -58,6 +66,10 @@ if(!isset($_GET['id'])){
 	<div class="panel panel-info">
 	    <div class="panel-heading">
 		<?php echo $tuple['user_email']; ?>
+
+		<?php if($is_user_post){ 
+		    echo "<a href=\"../comments/destroy.php?post_id=" . $_GET['id'] . "&comment_id=" .$tuple['id'] . "\"class=\"btn btn-danger\">Delete </a>";
+		 } ?>
 	    </div>
 
 	    <div class="panel-body">
