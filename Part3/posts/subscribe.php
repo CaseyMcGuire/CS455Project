@@ -14,8 +14,12 @@ try {
     print $dump;
     print "\n";
 
-    $db->exec("INSERT INTO Faves VALUES(".$email.",".$id.")");
-
+    $query = $db->prepare("INSERT INTO Faves VALUES(".$email.",".$id.")");
+    
+    $query->execute();
+    
+    $db = NULL;
+    
     header("Location: /faves/show.php");
 }
 catch(PDOException $e) {
