@@ -52,8 +52,6 @@
                 
             }
             
-            }
-            
             $pg_query = "SELECT COUNT(*) from Faves where email=\"$email\"";
             $pg_stmnt = $db->prepare($pg_query);
             $pg_stmnt->execute();
@@ -62,6 +60,10 @@
             $num_rows = intval($pg_result[0][0]);
             
             $db = NULL;
+            
+            }
+            
+           
             catch(PDOException $e) {
                 print 'Exception: ' . $e->getMessage();
             }
