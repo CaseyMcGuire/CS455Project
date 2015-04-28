@@ -39,7 +39,7 @@
             }
             
             // query to select all posts favorited by user with given email
-            $query_string = "select * from faves natural join post where email=\"$email\" ORDER BY date, tim DESC LIMIT 10 OFFSET ".$page*10;
+            $query_string = "select * from faves natural join post where email=\"$email\" ORDER BY date, time DESC LIMIT 10 OFFSET ".$page*10;
             $query = $db->prepare($query_string);
             $query->execute();
             
