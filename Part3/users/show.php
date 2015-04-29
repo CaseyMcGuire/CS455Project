@@ -115,7 +115,11 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 			    <li>
 				<?php
 				$prev_page = $page - 1;
-				echo "<a href=\"show.php?page=$prev_page\" aria-label=\"Previous\">"; 
+				if(!isset($_GET['email'])){
+				    echo "<a href=\"show.php?page=$prev_page\" aria-label=\"Previous\">"; 
+				}else{
+				    echo "<a href=\"show.php?page=$prev_page&email=$email\" aria-label=\"Previous\">";
+				}
 				?>
 				<span aria-hidden="true">Previous</span>
 				</a>
@@ -126,13 +130,25 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 			if($i == $page){
 		    ?>
 			<li class="active">
-			    <?php echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>"; ?>
+			    <?php 
+			    if(!isset($_GET['email'])){
+				echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>"; 
+			    }else{
+				echo "<a href=\"show.php?page=$i&email=$email\">" . ($i+1) . "</a>";
+			    }
+			    ?>
 			</li>
 		    <?php
 		}else{
 		    ?>
 			<li>
-                            <?php echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>"; ?>
+                            <?php 
+			    if(!isset($_GET['email'])){
+				echo "<a href=\"show.php?page=$i\">" . ($i+1) . "</a>";
+			    }else{
+				echo "<a href=\"show.php?email=$email&page=$i\">" . ($i+1) . "</a>";
+			    }
+			    ?>
 			</li>
 			
 			
@@ -149,7 +165,11 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 			    <?php
 			    
 			    $next_page = $page + 1;
-			    echo "<a href=\"show.php?page=$next_page\" aria-label=\"Next\">";
+			    if(!isset($_GET['email'])){
+				echo "<a href=\"show.php?page=$next_page\" aria-label=\"Next\">";
+			    }else{
+				echo "<a href=\"show.php?page=$next_page&email=$email\" aria-label=\"Next\">";
+			    }
 			    ?>
 			    <span aria-hidden="true">Next</span></a>
 			    </li>
