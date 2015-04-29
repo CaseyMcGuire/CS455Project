@@ -55,7 +55,7 @@ if(!isset($_GET['id'])){
 		<div class="blog-text">
             <!-- this is where an individual post's content is displayed -->
 		    <?php echo $result['content']; ?>
-p		</div>
+		</div>
 	    </div>
 	</div>
     <?php
