@@ -9,10 +9,14 @@ include("../util/assets.php");
  //blog to show them so just redirect to home page
 if(!isset($_GET["email"]) && !user_logged_in()){
   header("Location: ../");
-}elseif(!isset($_GET["email"]) && user_logged_in()){ 
+}elseif(!isset($_GET["email"]) && user_logged_in() || isset($_GET['email']) && user_logged_in() && strcmp($_GET['email'], $_SESSION['username']) == 0){
+    $is_current_user_blog = true;
 ?>
     <a href="../posts/new.php" class="btn btn-primary btn-large">New Post </a>
-<?php } ?>
+<?php }else{
+    $is_current_user_blog = false;
+
+} ?>
   
 <div class="container">
     <div class="jumbotron">
@@ -62,7 +66,11 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		    echo "<div class=\"panel panel-default\">";
 
 		    echo "<div class=\"panel-heading\">";
-		    echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a></h2>";
+		    echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a>";
+		    if($is_current_user_blog){
+			echo "<a href=\"/posts/destroy.php?post_id=" . $tuple['id'] . "\" class=\"btn btn-danger danger-button\"> Destroy </a>";
+		    }
+		    echo "</h2>";
 		    echo "</div>";
 
 		    echo  "<div class=\"panel-body\">";
