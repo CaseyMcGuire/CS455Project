@@ -4,6 +4,8 @@ include("../util/assets.php");
 ?>
 <body>
 <?php include("../util/header.php") ?>
+<div class="container">
+    <div class="jumbotron">
 <?php 
  //if there is no query string and the user is not logged in, we don't know which
  //blog to show them so just redirect to home page
@@ -12,14 +14,13 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 }elseif(!isset($_GET["email"]) && user_logged_in() || isset($_GET['email']) && user_logged_in() && strcmp($_GET['email'], $_SESSION['username']) == 0){
     $is_current_user_blog = true;
 ?>
-    <a href="../posts/new.php" class="btn btn-primary btn-large">New Post </a>
+    <a href="../posts/new.php" class="btn btn-primary btn-block">New Post </a>
 <?php }else{
     $is_current_user_blog = false;
 
 } ?>
   
-<div class="container">
-    <div class="jumbotron">
+
 
 	    <?php
 	    
@@ -68,7 +69,7 @@ if(!isset($_GET["email"]) && !user_logged_in()){
 		    echo "<div class=\"panel-heading\">";
 		    echo "<h2><a href=\"/posts/show.php?id=" . $tuple['id']. "\">" . $tuple['title'] . "</a>";
 		    if($is_current_user_blog){
-			echo "<a href=\"/posts/destroy.php?post_id=" . $tuple['id'] . "\" class=\"btn btn-danger danger-button\"> Destroy </a>";
+			echo "<a href=\"/posts/destroy.php?post_id=" . $tuple['id'] . "\" class=\"btn btn-danger danger-button\"> Delete </a>";
 		    }
 		    echo "</h2>";
 		    echo "</div>";
