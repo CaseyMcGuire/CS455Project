@@ -18,17 +18,18 @@ try{
     $stmt->execute();
 
     $result = $stmt->fetch();
-    
+   
+    //if this isn't the current user's post, redirect
     if(strcmp($result['user_email'], $_SESSION['username']) != 0){
         header("Location: /");
       	exit;
     }
 
-        $stmt = $db->prepare('Delete from Post where id=:post_id');
-        $stmt->bindValue(':post_id', $post_id, SQLITE3_INTEGER);
-        $stmt->execute();
+    $stmt = $db->prepare('Delete from Post where id=:post_id');
+    $stmt->bindValue(':post_id', $post_id, SQLITE3_INTEGER);
+    $stmt->execute();
     
-        header("Location: ../users/show.php?email=" . $_SESSION['username']);
+    header("Location: ../users/show.php?email=" . $_SESSION['username']);
     
 
 }catch(PDOException $e){
