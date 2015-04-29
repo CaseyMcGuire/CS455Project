@@ -36,11 +36,15 @@ if(!isset($_GET['id'])){
     ?>
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small></h3>
+		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small> 
+		    <?php 
+		    echo "<a href=\"edit.php?post_id=" . $result['id'] . "\" class=\"btn btn-info danger-button\"> Edit</a>";
+		    ?>
+		</h3>
         
         <h4>
     	    <?php
-	    if(user_logged_in()){
+	    if(user_logged_in() && !$is_user_post){
 		echo "<a href=\"subscribe.php?id=".$result['id']."&subscriber=".$_SESSION['username']."\">Save Post</a>";
 	    }
             ?>
@@ -51,7 +55,7 @@ if(!isset($_GET['id'])){
 		<div class="blog-text">
             <!-- this is where an individual post's content is displayed -->
 		    <?php echo $result['content']; ?>
-		</div>
+p		</div>
 	    </div>
 	</div>
     <?php

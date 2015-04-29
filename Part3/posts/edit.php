@@ -61,7 +61,9 @@ if(isset($_GET['error'])){
                 </div>
                                                                                     
                 <textarea name="content" id="editor"></textarea>
-                                                      
+		<?php
+		echo "<input type=\"hidden\" name=\"post_id\" value=\"" . $_GET['post_id'] . "\">";
+		?>
                 <input type="submit" class="btn btn-primary btn-lg btn-block">
                             
             </form>                                                                                       
