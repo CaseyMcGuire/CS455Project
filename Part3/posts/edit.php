@@ -79,14 +79,22 @@ if(isset($_GET['error'])){
 
 <script>
  'use strict';
- window.onload = function(){
+
+
+ function init(){
 
      var content = document.getElementById('content').value;
      var title = document.getElementById('title').value;
-    
-     tinyMCE.get('editor').setContent(content);
+
+     //a hack so that the text editor can be initialized first
+     setTimeout(function(){
+	 tinyMCE.get('editor').setContent(content);
+     }, 100);
+
      document.getElementById('post-title').value = title;
  }
+
+ window.onload = init;
 </script>
 
 </body>
