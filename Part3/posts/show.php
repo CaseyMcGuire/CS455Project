@@ -36,9 +36,11 @@ if(!isset($_GET['id'])){
     ?>
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-		<h3><?php echo $result['title']; ?><small>  by <?php echo $result['user_email']; ?></small> 
+		<h3><?php echo $result['title']; ?><small>  by <?php echo "<a href=\"../users/show.php?email=" . $result['user_email'] . "\">" .  $result['user_email'] . "</a>"; ?></small> 
 		    <?php 
-		    echo "<a href=\"edit.php?post_id=" . $result['id'] . "\" class=\"btn btn-info danger-button\"> Edit</a>";
+		    if(user_logged_in() && $is_user_post){
+			echo "<a href=\"edit.php?post_id=" . $result['id'] . "\" class=\"btn btn-info danger-button\"> Edit</a>";
+		    }
 		    ?>
 		</h3>
         
